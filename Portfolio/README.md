@@ -1,2 +1,0 @@
-# austinmejias.com
-Portfolio Site

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Austin Mejias</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="hero-title">John Doe</h1>
+                    <p class="lead">Senior Full Stack Developer & UI/UX Designer</p>
+                    <p class="hero-description mb-4">Crafting exceptional digital experiences with modern technologies and thoughtful design.</p>
+                    <a href="#contact" class="btn btn-custom btn-lg">Get In Touch</a>
+                    <div class="hero-scroll" onclick="scrollToSection('about')">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>Passionate developer with a keen eye for detail and a drive for excellence</p>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="about-content">
+                        <p>With over 8 years of experience in software development, I specialize in creating robust, scalable applications and intuitive user interfaces. My expertise spans across modern web technologies, cloud platforms, and agile methodologies.</p>
+                        <p>I believe in writing clean, maintainable code and delivering solutions that not only meet technical requirements but also provide exceptional user experiences. My approach combines technical proficiency with creative problem-solving.</p>
+                        <p>When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or mentoring aspiring developers in the community.</p>
+                        <div class="stats-row mt-4">
+                            <div class="stat-item">
+                                <h3 class="stat-number" data-target="50">0</h3>
+                                <p>Projects Completed</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3 class="stat-number" data-target="8">0</h3>
+                                <p>Years Experience</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3 class="stat-number" data-target="25">0</h3>
+                                <p>Happy Clients</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <img src="/placeholder.svg?height=400&width=500" alt="Profile" class="img-fluid rounded shadow">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-code"></i>
+                                <p>Passionate Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills & Expertise</h2>
+                <p>Technologies and tools I work with to bring ideas to life</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="skill-item">
+                        <i class="fab fa-js-square"></i>
+                        <h4>Frontend Development</h4>
+                        <p>React, Vue.js, TypeScript, HTML5, CSS3, SASS, Bootstrap, Tailwind CSS</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="90"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="skill-item">
+                        <i class="fas fa-server"></i>
+                        <h4>Backend Development</h4>
+                        <p>Node.js, Python, Express.js, Django, REST APIs, GraphQL, Microservices</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="85"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="skill-item">
+                        <i class="fas fa-database"></i>
+                        <h4>Database & Cloud</h4>
+                        <p>PostgreSQL, MongoDB, Redis, AWS, Docker, Kubernetes, CI/CD</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="80"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="skill-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h4>Mobile Development</h4>
+                        <p>React Native, Flutter, Progressive Web Apps, Responsive Design</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="75"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="skill-item">
+                        <i class="fas fa-paint-brush"></i>
+                        <h4>UI/UX Design</h4>
+                        <p>Figma, Adobe XD, Sketch, Prototyping, User Research, Design Systems</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="70"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="skill-item">
+                        <i class="fas fa-cogs"></i>
+                        <h4>DevOps & Tools</h4>
+                        <p>Git, GitHub Actions, Jenkins, Terraform, Monitoring, Testing</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="78"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Projects</h2>
+                <p>A showcase of my recent work and contributions</p>
+            </div>
+            <div class="projects-filter text-center mb-5">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+            <div class="row projects-grid">
+                <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="web">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/placeholder.svg?height=200&width=400" alt="E-commerce Platform">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" title="View Live"><i class="fas fa-external-link-alt"></i></a>
+                                    <a href="#" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5>E-commerce Platform</h5>
+                            <p>A full-stack e-commerce solution with modern payment integration, inventory management, and analytics dashboard.</p>
+                            <div class="project-tags">
+                                <span class="badge">React</span>
+                                <span class="badge">Node.js</span>
+                                <span class="badge">PostgreSQL</span>
+                                <span class="badge">Stripe</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="web">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/placeholder.svg?height=200&width=400" alt="Task Management App">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" title="View Live"><i class="fas fa-external-link-alt"></i></a>
+                                    <a href="#" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5>Task Management App</h5>
+                            <p>A collaborative project management tool with real-time updates, team collaboration features, and advanced reporting.</p>
+                            <div class="project-tags">
+                                <span class="badge">Vue.js</span>
+                                <span class="badge">Express</span>
+                                <span class="badge">MongoDB</span>
+                                <span class="badge">Socket.io</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="design">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/placeholder.svg?height=200&width=400" alt="Analytics Dashboard">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" title="View Live"><i class="fas fa-external-link-alt"></i></a>
+                                    <a href="#" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5>Analytics Dashboard</h5>
+                            <p>A comprehensive data visualization platform with interactive charts, real-time metrics, and customizable reports.</p>
+                            <div class="project-tags">
+                                <span class="badge">React</span>
+                                <span class="badge">D3.js</span>
+                                <span class="badge">Python</span>
+                                <span class="badge">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="mobile">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/placeholder.svg?height=200&width=400" alt="Fitness Tracker App">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" title="View Live"><i class="fas fa-external-link-alt"></i></a>
+                                    <a href="#" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5>Fitness Tracker App</h5>
+                            <p>A mobile fitness application with workout tracking, nutrition logging, and social features for motivation.</p>
+                            <div class="project-tags">
+                                <span class="badge">React Native</span>
+                                <span class="badge">Firebase</span>
+                                <span class="badge">Redux</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="web">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/placeholder.svg?height=200&width=400" alt="Learning Management System">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" title="View Live"><i class="fas fa-external-link-alt"></i></a>
+                                    <a href="#" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5>Learning Management System</h5>
+                            <p>An educational platform with course management, video streaming, assessments, and progress tracking.</p>
+                            <div class="project-tags">
+                                <span class="badge">Next.js</span>
+                                <span class="badge">Prisma</span>
+                                <span class="badge">Stripe</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="design">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/placeholder.svg?height=200&width=400" alt="Brand Identity Design">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" title="View Live"><i class="fas fa-external-link-alt"></i></a>
+                                    <a href="#" class="project-link" title="View Code"><i class="fab fa-dribbble"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5>Brand Identity Design</h5>
+                            <p>Complete brand identity package including logo design, color palette, typography, and brand guidelines.</p>
+                            <div class="project-tags">
+                                <span class="badge">Figma</span>
+                                <span class="badge">Illustrator</span>
+                                <span class="badge">Branding</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+                <p>My journey through various roles and responsibilities</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="timeline">
+                        <div class="experience-item">
+                            <div class="experience-date">2021 - Present</div>
+                            <div class="experience-content">
+                                <h4>Senior Full Stack Developer</h4>
+                                <div class="company">TechCorp Solutions</div>
+                                <p>Lead development of enterprise-level applications, mentor junior developers, and architect scalable solutions. Implemented microservices architecture that improved system performance by 40%.</p>
+                                <ul>
+                                    <li>Led a team of 5 developers on multiple projects</li>
+                                    <li>Architected and implemented microservices infrastructure</li>
+                                    <li>Reduced application load time by 60% through optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="experience-item">
+                            <div class="experience-date">2019 - 2021</div>
+                            <div class="experience-content">
+                                <h4>Full Stack Developer</h4>
+                                <div class="company">Digital Innovations Inc.</div>
+                                <p>Developed and maintained multiple client projects using React, Node.js, and cloud technologies. Collaborated with design teams to create responsive, user-friendly interfaces.</p>
+                                <ul>
+                                    <li>Delivered 15+ client projects on time and within budget</li>
+                                    <li>Implemented automated testing reducing bugs by 50%</li>
+                                    <li>Collaborated with UX/UI teams on design systems</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="experience-item">
+                            <div class="experience-date">2017 - 2019</div>
+                            <div class="experience-content">
+                                <h4>Frontend Developer</h4>
+                                <div class="company">StartupXYZ</div>
+                                <p>Built responsive web applications and mobile-first designs. Worked closely with UX designers to implement pixel-perfect interfaces and optimize user experience.</p>
+                                <ul>
+                                    <li>Developed responsive designs for 10+ web applications</li>
+                                    <li>Improved website performance scores by 35%</li>
+                                    <li>Implemented accessibility standards (WCAG 2.1)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Get In Touch</h2>
+                <p style="color: rgba(255,255,255,0.8);">Let's discuss your next project or opportunity</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-custom btn-lg">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>john.doe@email.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>San Francisco, CA</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" title="Dribbble"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 John Doe. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Built with <i class="fas fa-heart text-danger"></i> and Bootstrap</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" title="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
