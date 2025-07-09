@@ -431,6 +431,177 @@ body {
   transition: width 2s ease-in-out;
 }
 
+/* Education Section */
+.education-item {
+  background: white;
+  border-radius: 15px;
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  padding: 2rem;
+}
+
+.education-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent-color);
+  transform: scaleX(0);
+  transition: var(--transition);
+}
+
+.education-item:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-dark);
+}
+
+.education-item:hover::before {
+  transform: scaleX(1);
+}
+
+.education-icon {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.education-icon i {
+  font-size: 3rem;
+  color: var(--accent-color);
+  transition: var(--transition);
+}
+
+.education-item:hover .education-icon i {
+  transform: scale(1.1);
+}
+
+.education-content h4 {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.school-name {
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.education-status {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.in-progress {
+  background-color: #28a745;
+  color: white;
+}
+
+.status-badge.planned {
+  background-color: #6c757d;
+  color: white;
+}
+
+.progress-container {
+  margin-bottom: 1.5rem;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.percentage {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.education-progress {
+  width: 100%;
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.education-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-color), #2980b9);
+  border-radius: 4px;
+  width: 0%;
+  transition: width 2s ease-in-out;
+  position: relative;
+}
+
+.education-progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.education-description {
+  color: #666;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0;
+}
+
+.future-degree {
+  background: #f8f9fa;
+  border: 2px dashed #dee2e6;
+}
+
+.future-degree:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-light);
+  border-color: var(--accent-color);
+}
+
+.future-degree .education-icon i {
+  color: #6c757d;
+}
+
+.future-degree:hover .education-icon i {
+  color: var(--accent-color);
+}
+
 /* Projects Section */
 .projects {
   background-color: var(--bg-light);

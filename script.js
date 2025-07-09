@@ -125,7 +125,9 @@ function initScrollAnimations() {
   }, observerOptions)
 
   // Add animation classes and observe elements
-  const animatedElements = document.querySelectorAll(".skill-item, .project-card, .experience-item")
+  const animatedElements = document.querySelectorAll(
+    ".certification-item, .project-card, .experience-item, .education-item",
+  )
   animatedElements.forEach((el, index) => {
     el.classList.add("fade-in")
     el.style.transitionDelay = index * 0.1 + "s"
@@ -282,7 +284,7 @@ function animateCounter(element, target) {
 
 // Skill bars animation
 function initSkillBars() {
-  const skillBars = document.querySelectorAll(".progress-bar")
+  const skillBars = document.querySelectorAll(".progress-bar, .education-progress-bar")
   const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
