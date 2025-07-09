@@ -1,6 +1,5 @@
 // Global variables
 let isLoaded = false
-let bootstrap // Declare the bootstrap variable
 
 // DOM Content Loaded
 document.addEventListener("DOMContentLoaded", () => {
@@ -69,7 +68,7 @@ function initNavigation() {
       // Close mobile menu if open
       const navbarCollapse = document.getElementById("navbarNav")
       if (navbarCollapse && navbarCollapse.classList.contains("show")) {
-        const bsCollapse = new bootstrap.Collapse(navbarCollapse)
+        const bsCollapse = new window.bootstrap.Collapse(navbarCollapse)
         bsCollapse.hide()
       }
     })
@@ -323,7 +322,7 @@ function initCyberEffects() {
     element.classList.add("cyber-glow")
   })
 
-  // Matrix rain effect (optional - can be enhanced)
+  // Matrix rain effect
   createMatrixEffect()
 }
 
@@ -447,7 +446,7 @@ document.addEventListener("keydown", (e) => {
     // Close mobile menu if open
     const navbarCollapse = document.querySelector(".navbar-collapse.show")
     if (navbarCollapse) {
-      const bsCollapse = new bootstrap.Collapse(navbarCollapse)
+      const bsCollapse = new window.bootstrap.Collapse(navbarCollapse)
       bsCollapse.hide()
     }
   }
