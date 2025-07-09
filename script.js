@@ -34,6 +34,7 @@ function initializePortfolio() {
   initSkillBars()
   initParallax()
   initRevealAnimations()
+  initCyberEffects()
 }
 
 // Navigation functionality
@@ -314,6 +315,64 @@ function initParallax() {
   })
 }
 
+// Cyber effects initialization
+function initCyberEffects() {
+  // Add cyber glow effects to specific elements
+  const cyberElements = document.querySelectorAll(".navbar-brand, .hero-title")
+  cyberElements.forEach((element) => {
+    element.classList.add("cyber-glow")
+  })
+
+  // Matrix rain effect (optional - can be enhanced)
+  createMatrixEffect()
+}
+
+// Matrix rain effect
+function createMatrixEffect() {
+  const canvas = document.createElement("canvas")
+  canvas.className = "matrix-bg"
+  document.body.appendChild(canvas)
+
+  const ctx = canvas.getContext("2d")
+  canvas.width = window.innerWidth
+  canvas.height = window.innerHeight
+
+  const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}".split("")
+  const font_size = 10
+  const columns = canvas.width / font_size
+  const drops = []
+
+  for (let x = 0; x < columns; x++) {
+    drops[x] = 1
+  }
+
+  function draw() {
+    ctx.fillStyle = "rgba(13, 13, 13, 0.04)"
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+    ctx.fillStyle = "#00ff41"
+    ctx.font = font_size + "px monospace"
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = matrix[Math.floor(Math.random() * matrix.length)]
+      ctx.fillText(text, i * font_size, drops[i] * font_size)
+
+      if (drops[i] * font_size > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0
+      }
+      drops[i]++
+    }
+  }
+
+  setInterval(draw, 35)
+
+  // Resize canvas on window resize
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+  })
+}
+
 // Utility functions
 function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -345,7 +404,7 @@ function showNotification(message, type) {
     "</div>"
 
   // Add styles
-  const bgColor = type === "success" ? "#28a745" : type === "error" ? "#dc3545" : "#17a2b8"
+  const bgColor = type === "success" ? "#00ff41" : type === "error" ? "#ff6600" : "#00ff41"
 
   notification.style.cssText =
     "position: fixed;" +
@@ -354,14 +413,15 @@ function showNotification(message, type) {
     "background: " +
     bgColor +
     ";" +
-    "color: white;" +
+    "color: #0d0d0d;" +
     "padding: 15px 20px;" +
     "border-radius: 10px;" +
-    "box-shadow: 0 5px 15px rgba(0,0,0,0.2);" +
+    "box-shadow: 0 5px 15px rgba(0,255,65,0.3);" +
     "z-index: 10000;" +
     "transform: translateX(100%);" +
     "transition: transform 0.3s ease;" +
-    "max-width: 300px;"
+    "max-width: 300px;" +
+    "font-weight: 600;"
 
   document.body.appendChild(notification)
 
