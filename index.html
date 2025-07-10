@@ -3,32 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Austin Mejias - Cybersecurity Professional</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Professional Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#home">Austin Mejias</a>
+            <a class="navbar-brand fw-bold" href="#home">Portfolio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#education">Education</a>
+                        <a class="nav-link" href="#services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#certifications">Certifications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -41,12 +41,24 @@
     <!-- Hero Section -->
     <section id="home" class="hero-section d-flex align-items-center">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h1 class="display-4 fw-bold mb-4">Austin Mejias</h1>
-                    <p class="lead mb-4">Cybersecurity Professional & Full-Stack Developer</p>
-                    <p class="mb-4">Military-trained cybersecurity expert with 8+ years of experience protecting critical assets in high-security environments</p>
-                    <a href="#about" class="btn btn-primary btn-lg">Learn More</a>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold mb-3">Hello, I'm <span class="text-accent">John Doe</span></h1>
+                        <h2 class="h4 mb-4 text-light-purple">Creative Developer & Designer</h2>
+                        <p class="lead mb-4">I create beautiful, functional, and user-centered digital experiences that make a difference.</p>
+                        <div class="hero-buttons">
+                            <a href="#portfolio" class="btn btn-primary btn-lg me-3">View My Work</a>
+                            <a href="#contact" class="btn btn-outline-light btn-lg">Get In Touch</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image text-center">
+                        <div class="profile-card">
+                            <img src="/placeholder.svg?height=300&width=300" alt="Profile" class="img-fluid rounded-circle mb-3">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -56,16 +68,73 @@
     <section id="about" class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="section-title text-center mb-5">About Me</h2>
-                    <div class="card bg-secondary">
-                        <div class="card-body">
-                            <p class="card-text">
-                                I am a military-trained cybersecurity professional with over 8 years of experience in protecting critical assets in high-security environments. I specialize in vulnerability management, endpoint security, and patch lifecycle coordination.
-                            </p>
-                            <p class="card-text">
-                                Currently completing my Bachelor's in Computer Science while expanding my capabilities as a full-stack developer. This unique combination allows me to build secure, scalable solutions from the ground up.
-                            </p>
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Get to know me better</p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <h3 class="mb-4">I'm a passionate developer with 5+ years of experience</h3>
+                        <p class="mb-4">I specialize in creating modern, responsive websites and applications that deliver exceptional user experiences. My expertise spans across front-end and back-end development, with a keen eye for design and attention to detail.</p>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check text-accent me-2"></i>Web Development</li>
+                                    <li class="mb-2"><i class="fas fa-check text-accent me-2"></i>UI/UX Design</li>
+                                    <li class="mb-2"><i class="fas fa-check text-accent me-2"></i>Mobile Apps</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check text-accent me-2"></i>E-commerce</li>
+                                    <li class="mb-2"><i class="fas fa-check text-accent me-2"></i>SEO Optimization</li>
+                                    <li class="mb-2"><i class="fas fa-check text-accent me-2"></i>Brand Identity</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="#contact" class="btn btn-primary mt-3">Hire Me</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="skills-section">
+                        <h4 class="mb-4">Technical Skills</h4>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>HTML/CSS</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>JavaScript</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>React/Vue</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Node.js</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 80%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -73,112 +142,171 @@
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="py-5 bg-dark">
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-light-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="section-title text-center mb-5">Education</h2>
-                    <div class="card bg-secondary">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-graduation-cap fa-2x text-primary me-3"></i>
-                                <div>
-                                    <h5 class="card-title mb-1">Bachelor of Science in Computer Science</h5>
-                                    <p class="card-text text-muted mb-0">Western Governors University (WGU)</p>
-                                    <small class="text-muted">Progress: 80/120 Credit Hours</small>
-                                </div>
-                            </div>
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Services</h2>
+                    <p class="section-subtitle">What I can do for you</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon mb-3">
+                            <i class="fas fa-code"></i>
                         </div>
+                        <h4>Web Development</h4>
+                        <p>Custom websites and web applications built with modern technologies and best practices.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon mb-3">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h4>UI/UX Design</h4>
+                        <p>Beautiful and intuitive user interfaces that provide exceptional user experiences.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon mb-3">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Mobile Development</h4>
+                        <p>Responsive mobile applications that work seamlessly across all devices and platforms.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon mb-3">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h4>E-commerce</h4>
+                        <p>Complete e-commerce solutions with secure payment integration and inventory management.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon mb-3">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>SEO Optimization</h4>
+                        <p>Improve your website's visibility and ranking on search engines with proven SEO strategies.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon mb-3">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h4>Maintenance</h4>
+                        <p>Ongoing support and maintenance to keep your website running smoothly and securely.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-5">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="section-title text-center mb-5">Certifications</h2>
-                    <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <div class="card bg-secondary h-100">
-                                <div class="card-body text-center">
-                                    <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
-                                    <h5 class="card-title">CompTIA Security+</h5>
-                                    <p class="card-text">Valid until July 2029</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="card bg-secondary h-100">
-                                <div class="card-body text-center">
-                                    <i class="fas fa-cogs fa-3x text-primary mb-3"></i>
-                                    <h5 class="card-title">ITIL v4</h5>
-                                    <p class="card-text">Valid until April 2027</p>
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Portfolio</h2>
+                    <p class="section-subtitle">My recent work</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Project 1" class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h5>E-commerce Platform</h5>
+                                    <p>Modern online store with payment integration</p>
+                                    <a href="#" class="btn btn-sm btn-outline-light me-2"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-light"><i class="fab fa-github"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-5 bg-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <h2 class="section-title text-center mb-5">Professional Experience</h2>
-                    
-                    <!-- Current Role -->
-                    <div class="card bg-secondary mb-4">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <h5 class="card-title text-primary">Vulnerability Management Team Lead</h5>
-                                    <h6 class="card-subtitle mb-2">United States Air Force</h6>
-                                    <p class="text-muted mb-3">Nov 2024 - Present | Hampton Roads, Virginia</p>
-                                </div>
-                                <div class="col-md-4 text-md-end">
-                                    <span class="badge bg-success">Current Position</span>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Project 2" class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h5>Corporate Website</h5>
+                                    <p>Professional business website with CMS</p>
+                                    <a href="#" class="btn btn-sm btn-outline-light me-2"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-light"><i class="fab fa-github"></i></a>
                                 </div>
                             </div>
-                            <ul class="card-text">
-                                <li>Led cybersecurity operations and vulnerability management for 3 classified networks supporting 1K+ annual AFCYBER missions</li>
-                                <li>Built and trained a cyber team securing 1.3K endpoint systems across multi-domain environments</li>
-                                <li>Designed centralized patch management process, reducing scan time from 3 days to <6 hours</li>
-                                <li>Raised device compliance and access rates from 75% to 99%</li>
-                                <li>Resolved 2.8K STIG findings and eliminated 430+ unauthorized software packages</li>
-                                <li>Reduced vulnerabilities per host from 20.5 to 0.8</li>
-                                <li>Mentored 13 junior cyber technicians, increasing team readiness by 25%</li>
-                                <li>Recognized as Group's Senior Technician of the Quarter</li>
-                            </ul>
                         </div>
                     </div>
-
-                    <!-- Previous Role -->
-                    <div class="card bg-secondary">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <h5 class="card-title text-primary">IT Technical Support & Asset Management Supervisor</h5>
-                                    <h6 class="card-subtitle mb-2">United States Air Force</h6>
-                                    <p class="text-muted mb-3">Apr 2023 - Nov 2024 | Hampton Roads, Virginia</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Project 3" class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h5>Mobile App</h5>
+                                    <p>Cross-platform mobile application</p>
+                                    <a href="#" class="btn btn-sm btn-outline-light me-2"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-light"><i class="fab fa-github"></i></a>
                                 </div>
                             </div>
-                            <ul class="card-text">
-                                <li>Led Tier I–II IT operations and asset lifecycle management for 400+ users across 3 classified networks</li>
-                                <li>Oversaw Active Directory structure, endpoint imaging, and accountability for 1K+ secure systems</li>
-                                <li>Delivered support for 380+ high-priority systems during daily ops and 130+ surge tasks</li>
-                                <li>Maintained 100% asset visibility through rigorous endpoint tracking and role-based access controls</li>
-                                <li>Directed enterprise hardware refresh across 9 enclaves, replacing 780+ legacy systems</li>
-                                <li>Returned $600K in recoverable equipment to DoD's Reutilization Program</li>
-                                <li>Reduced average response time by 35% through workflow redesign</li>
-                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Project 4" class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h5>Dashboard UI</h5>
+                                    <p>Analytics dashboard with data visualization</p>
+                                    <a href="#" class="btn btn-sm btn-outline-light me-2"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-light"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Project 5" class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h5>Brand Identity</h5>
+                                    <p>Complete brand identity and logo design</p>
+                                    <a href="#" class="btn btn-sm btn-outline-light me-2"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-light"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Project 6" class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h5>Web Application</h5>
+                                    <p>Full-stack web application with API</p>
+                                    <a href="#" class="btn btn-sm btn-outline-light me-2"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-light"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -187,34 +315,65 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-5">
+    <section id="contact" class="py-5 bg-light-section">
         <div class="container">
             <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Let's work together</p>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h2 class="section-title text-center mb-5">Get In Touch</h2>
-                    <div class="card bg-secondary">
-                        <div class="card-body text-center">
-                            <p class="card-text mb-4">
-                                I'm always interested in discussing cybersecurity opportunities, full-stack development projects, or connecting with fellow professionals in the field.
-                            </p>
-                            <div class="row justify-content-center">
-                                <div class="col-md-4 mb-3">
-                                    <a href="mailto:austin.mejias@example.com" class="btn btn-outline-primary btn-lg w-100">
-                                        <i class="fas fa-envelope me-2"></i>Email
-                                    </a>
+                    <div class="contact-form">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
                                 </div>
-                                <div class="col-md-4 mb-3">
-                                    <a href="https://linkedin.com/in/austinmejias" class="btn btn-outline-primary btn-lg w-100" target="_blank">
-                                        <i class="fab fa-linkedin me-2"></i>LinkedIn
-                                    </a>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <a href="https://github.com/austinmejias" class="btn btn-outline-primary btn-lg w-100" target="_blank">
-                                        <i class="fab fa-github me-2"></i>GitHub
-                                    </a>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
                                 </div>
                             </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-4 text-center mb-4">
+                    <div class="contact-info">
+                        <div class="contact-icon mb-3">
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
+                        <h5>Address</h5>
+                        <p>123 Main Street<br>New York, NY 10001</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center mb-4">
+                    <div class="contact-info">
+                        <div class="contact-icon mb-3">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h5>Phone</h5>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center mb-4">
+                    <div class="contact-info">
+                        <div class="contact-icon mb-3">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h5>Email</h5>
+                        <p>hello@johndoe.com</p>
                     </div>
                 </div>
             </div>
@@ -222,17 +381,23 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark py-4">
+    <footer class="py-4 text-center">
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center">
-                    <p class="mb-0">&copy; 2025 Austin Mejias. All rights reserved.</p>
+                <div class="col-lg-12">
+                    <div class="social-links mb-3">
+                        <a href="#" class="me-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-github"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="mb-0">&copy; 2024 John Doe. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
