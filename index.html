@@ -3,401 +3,376 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Portfolio</title>
+    <title>John Doe - Portfolio</title>
+    
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#home">Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
+    <!-- Mobile Toggle Button -->
+    <button class="mobile-toggle" id="mobileToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="/placeholder.svg?height=80&width=80" alt="Profile" class="profile-img">
+            <h4>John Doe</h4>
+            <p class="text-muted">Full Stack Developer</p>
         </div>
+        
+        <ul class="sidebar-nav list-unstyled">
+            <li class="nav-item">
+                <a href="#about" class="nav-link active">
+                    <i class="fas fa-user"></i>
+                    About Me
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#education" class="nav-link">
+                    <i class="fas fa-graduation-cap"></i>
+                    Education
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#certifications" class="nav-link">
+                    <i class="fas fa-certificate"></i>
+                    Certifications
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#projects" class="nav-link">
+                    <i class="fas fa-code"></i>
+                    Projects
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#contact" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    Get in Touch
+                </a>
+            </li>
+        </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section d-flex align-items-center">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="hero-content">
-                        <h1 class="display-4 fw-bold mb-3">Hello, I'm <span class="text-accent">John Doe</span></h1>
-                        <h2 class="h4 mb-4 text-light-purple">Creative Developer & Designer</h2>
-                        <p class="lead mb-4">I create beautiful, functional, and user-centered digital experiences that make a difference.</p>
-                        <div class="hero-buttons">
-                            <a href="#portfolio" class="btn btn-primary btn-lg me-3">View My Work</a>
-                            <a href="#contact" class="btn btn-outline-light btn-lg">Get In Touch</a>
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h3 class="mb-4">Hello, I'm John Doe</h3>
+                        <p class="lead mb-4">
+                            A passionate Full Stack Developer with 5+ years of experience creating 
+                            innovative web applications and solutions. I specialize in modern 
+                            JavaScript frameworks and cloud technologies.
+                        </p>
+                        <p class="mb-4">
+                            I love turning complex problems into simple, beautiful designs. When I'm 
+                            not coding, you'll find me exploring new technologies, contributing to 
+                            open source projects, or sharing knowledge with the developer community.
+                        </p>
+                        <div class="mb-4">
+                            <h5>Core Skills:</h5>
+                            <div class="skills-container">
+                                <span class="skill-badge">JavaScript</span>
+                                <span class="skill-badge">React</span>
+                                <span class="skill-badge">Node.js</span>
+                                <span class="skill-badge">Python</span>
+                                <span class="skill-badge">AWS</span>
+                                <span class="skill-badge">Docker</span>
+                                <span class="skill-badge">MongoDB</span>
+                                <span class="skill-badge">PostgreSQL</span>
+                                <span class="skill-badge">Git</span>
+                                <span class="skill-badge">CI/CD</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="hero-image text-center">
-                        <div class="profile-card">
-                            <img src="/placeholder.svg?height=300&width=300" alt="Profile" class="img-fluid rounded-circle mb-3">
-                        </div>
+                    <div class="col-lg-6 text-center">
+                        <img src="/placeholder.svg?height=400&width=400" alt="About Me" class="img-fluid rounded">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5">
-                    <h2 class="section-title">About Me</h2>
-                    <p class="section-subtitle">Get to know me better</p>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="about-content">
-                        <h3 class="mb-4">I'm a passionate developer with 5+ years of experience</h3>
-                        <p class="mb-4">I specialize in creating modern, responsive websites and applications that deliver exceptional user experiences. My expertise spans across front-end and back-end development, with a keen eye for design and attention to detail.</p>
-                        <div class="row">
-                            <div class="col-sm-6">
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card education-card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <i class="fas fa-university text-primary me-2"></i>
+                                    Master of Computer Science
+                                </h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Stanford University</h6>
+                                <p class="text-muted">2018 - 2020</p>
+                                <p class="card-text">
+                                    Specialized in Software Engineering and Machine Learning. 
+                                    Graduated with honors (GPA: 3.8/4.0).
+                                </p>
                                 <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="fas fa-check text-accent me-2"></i>Web Development</li>
-                                    <li class="mb-2"><i class="fas fa-check text-accent me-2"></i>UI/UX Design</li>
-                                    <li class="mb-2"><i class="fas fa-check text-accent me-2"></i>Mobile Apps</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Advanced Algorithms</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Distributed Systems</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Machine Learning</li>
                                 </ul>
                             </div>
-                            <div class="col-sm-6">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card education-card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <i class="fas fa-graduation-cap text-primary me-2"></i>
+                                    Bachelor of Computer Engineering
+                                </h5>
+                                <h6 class="card-subtitle mb-2 text-muted">UC Berkeley</h6>
+                                <p class="text-muted">2014 - 2018</p>
+                                <p class="card-text">
+                                    Strong foundation in computer science fundamentals and 
+                                    software development practices.
+                                </p>
                                 <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="fas fa-check text-accent me-2"></i>E-commerce</li>
-                                    <li class="mb-2"><i class="fas fa-check text-accent me-2"></i>SEO Optimization</li>
-                                    <li class="mb-2"><i class="fas fa-check text-accent me-2"></i>Brand Identity</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Data Structures & Algorithms</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Software Engineering</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Database Systems</li>
                                 </ul>
                             </div>
                         </div>
-                        <a href="#contact" class="btn btn-primary mt-3">Hire Me</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="skills-section">
-                        <h4 class="mb-4">Technical Skills</h4>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>HTML/CSS</span>
-                                <span>95%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>JavaScript</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>React/Vue</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>Node.js</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 80%"></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-5 bg-light-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5">
-                    <h2 class="section-title">Services</h2>
-                    <p class="section-subtitle">What I can do for you</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card text-center h-100">
-                        <div class="service-icon mb-3">
-                            <i class="fas fa-code"></i>
+        <!-- Certifications Section -->
+        <section id="certifications" class="section">
+            <div class="container">
+                <h2 class="section-title">Certifications</h2>
+                <div class="row">
+                    <div class="col-lg-4 mb-4">
+                        <div class="card cert-card aws">
+                            <div class="card-header">
+                                <i class="fab fa-aws me-2"></i>
+                                AWS Solutions Architect
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Professional level certification demonstrating expertise in 
+                                    designing distributed systems on AWS.
+                                </p>
+                                <small class="text-muted">Issued: March 2023</small>
+                            </div>
                         </div>
-                        <h4>Web Development</h4>
-                        <p>Custom websites and web applications built with modern technologies and best practices.</p>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card text-center h-100">
-                        <div class="service-icon mb-3">
-                            <i class="fas fa-paint-brush"></i>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card cert-card google">
+                            <div class="card-header">
+                                <i class="fab fa-google me-2"></i>
+                                Google Cloud Professional
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Certified in designing, building, and managing solutions 
+                                    using Google Cloud technologies.
+                                </p>
+                                <small class="text-muted">Issued: January 2023</small>
+                            </div>
                         </div>
-                        <h4>UI/UX Design</h4>
-                        <p>Beautiful and intuitive user interfaces that provide exceptional user experiences.</p>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card text-center h-100">
-                        <div class="service-icon mb-3">
-                            <i class="fas fa-mobile-alt"></i>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card cert-card microsoft">
+                            <div class="card-header">
+                                <i class="fab fa-microsoft me-2"></i>
+                                Azure Developer Associate
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Expertise in developing and maintaining cloud applications 
+                                    and services on Microsoft Azure.
+                                </p>
+                                <small class="text-muted">Issued: November 2022</small>
+                            </div>
                         </div>
-                        <h4>Mobile Development</h4>
-                        <p>Responsive mobile applications that work seamlessly across all devices and platforms.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card text-center h-100">
-                        <div class="service-icon mb-3">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <h4>E-commerce</h4>
-                        <p>Complete e-commerce solutions with secure payment integration and inventory management.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card text-center h-100">
-                        <div class="service-icon mb-3">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <h4>SEO Optimization</h4>
-                        <p>Improve your website's visibility and ranking on search engines with proven SEO strategies.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card text-center h-100">
-                        <div class="service-icon mb-3">
-                            <i class="fas fa-cog"></i>
-                        </div>
-                        <h4>Maintenance</h4>
-                        <p>Ongoing support and maintenance to keep your website running smoothly and securely.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5">
-                    <h2 class="section-title">Portfolio</h2>
-                    <p class="section-subtitle">My recent work</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <img src="/placeholder.svg?height=300&width=400" alt="Project 1" class="img-fluid">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-content">
-                                    <h5>E-commerce Platform</h5>
-                                    <p>Modern online store with payment integration</p>
-                                    <a href="#" class="btn btn-sm btn-outline-light me-2"><i class="fas fa-eye"></i></a>
-                                    <a href="#" class="btn btn-sm btn-outline-light"><i class="fab fa-github"></i></a>
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="row">
+                    <div class="col-lg-4 mb-4">
+                        <div class="card project-card">
+                            <img src="/placeholder.svg?height=200&width=400" alt="E-commerce Platform" class="project-img">
+                            <div class="card-body">
+                                <h5 class="card-title">E-commerce Platform</h5>
+                                <p class="card-text">
+                                    Full-stack e-commerce solution with real-time inventory 
+                                    management and payment processing.
+                                </p>
+                                <div class="tech-stack">
+                                    <span class="tech-badge">React</span>
+                                    <span class="tech-badge">Node.js</span>
+                                    <span class="tech-badge">MongoDB</span>
+                                    <span class="tech-badge">Stripe</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="#" class="btn btn-primary btn-sm me-2">
+                                        <i class="fas fa-external-link-alt me-1"></i>Live Demo
+                                    </a>
+                                    <a href="#" class="btn btn-outline-secondary btn-sm">
+                                        <i class="fab fa-github me-1"></i>Code
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <img src="/placeholder.svg?height=300&width=400" alt="Project 2" class="img-fluid">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-content">
-                                    <h5>Corporate Website</h5>
-                                    <p>Professional business website with CMS</p>
-                                    <a href="#" class="btn btn-sm btn-outline-light me-2"><i class="fas fa-eye"></i></a>
-                                    <a href="#" class="btn btn-sm btn-outline-light"><i class="fab fa-github"></i></a>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card project-card">
+                            <img src="/placeholder.svg?height=200&width=400" alt="Task Management App" class="project-img">
+                            <div class="card-body">
+                                <h5 class="card-title">Task Management App</h5>
+                                <p class="card-text">
+                                    Collaborative project management tool with real-time 
+                                    updates and team collaboration features.
+                                </p>
+                                <div class="tech-stack">
+                                    <span class="tech-badge">Vue.js</span>
+                                    <span class="tech-badge">Express</span>
+                                    <span class="tech-badge">Socket.io</span>
+                                    <span class="tech-badge">PostgreSQL</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="#" class="btn btn-primary btn-sm me-2">
+                                        <i class="fas fa-external-link-alt me-1"></i>Live Demo
+                                    </a>
+                                    <a href="#" class="btn btn-outline-secondary btn-sm">
+                                        <i class="fab fa-github me-1"></i>Code
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <img src="/placeholder.svg?height=300&width=400" alt="Project 3" class="img-fluid">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-content">
-                                    <h5>Mobile App</h5>
-                                    <p>Cross-platform mobile application</p>
-                                    <a href="#" class="btn btn-sm btn-outline-light me-2"><i class="fas fa-eye"></i></a>
-                                    <a href="#" class="btn btn-sm btn-outline-light"><i class="fab fa-github"></i></a>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card project-card">
+                            <img src="/placeholder.svg?height=200&width=400" alt="Weather Dashboard" class="project-img">
+                            <div class="card-body">
+                                <h5 class="card-title">Weather Dashboard</h5>
+                                <p class="card-text">
+                                    Interactive weather application with location-based 
+                                    forecasts and historical data visualization.
+                                </p>
+                                <div class="tech-stack">
+                                    <span class="tech-badge">React</span>
+                                    <span class="tech-badge">D3.js</span>
+                                    <span class="tech-badge">Weather API</span>
+                                    <span class="tech-badge">Chart.js</span>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <img src="/placeholder.svg?height=300&width=400" alt="Project 4" class="img-fluid">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-content">
-                                    <h5>Dashboard UI</h5>
-                                    <p>Analytics dashboard with data visualization</p>
-                                    <a href="#" class="btn btn-sm btn-outline-light me-2"><i class="fas fa-eye"></i></a>
-                                    <a href="#" class="btn btn-sm btn-outline-light"><i class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <img src="/placeholder.svg?height=300&width=400" alt="Project 5" class="img-fluid">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-content">
-                                    <h5>Brand Identity</h5>
-                                    <p>Complete brand identity and logo design</p>
-                                    <a href="#" class="btn btn-sm btn-outline-light me-2"><i class="fas fa-eye"></i></a>
-                                    <a href="#" class="btn btn-sm btn-outline-light"><i class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <img src="/placeholder.svg?height=300&width=400" alt="Project 6" class="img-fluid">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-content">
-                                    <h5>Web Application</h5>
-                                    <p>Full-stack web application with API</p>
-                                    <a href="#" class="btn btn-sm btn-outline-light me-2"><i class="fas fa-eye"></i></a>
-                                    <a href="#" class="btn btn-sm btn-outline-light"><i class="fab fa-github"></i></a>
+                                <div class="mt-3">
+                                    <a href="#" class="btn btn-primary btn-sm me-2">
+                                        <i class="fas fa-external-link-alt me-1"></i>Live Demo
+                                    </a>
+                                    <a href="#" class="btn btn-outline-secondary btn-sm">
+                                        <i class="fab fa-github me-1"></i>Code
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5">
-                    <h2 class="section-title">Get In Touch</h2>
-                    <p class="section-subtitle">Let's work together</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="contact-form">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="email" class="form-control" placeholder="Your Email" required>
-                                </div>
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4 class="mb-4">Let's Connect</h4>
+                        <p class="mb-4">
+                            I'm always interested in new opportunities and exciting projects. 
+                            Whether you have a question or just want to say hi, feel free to reach out!
+                        </p>
+                        
+                        <div class="contact-info">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-envelope text-primary me-3"></i>
+                                <span>john.doe@email.com</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-phone text-primary me-3"></i>
+                                <span>+1 (555) 123-4567</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-map-marker-alt text-primary me-3"></i>
+                                <span>San Francisco, CA</span>
+                            </div>
+                        </div>
+
+                        <div class="social-links mt-4">
+                            <a href="#" class="btn btn-outline-primary me-2">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-primary me-2">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-primary me-2">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <form id="contactForm" class="contact-form">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" required>
                             </div>
                             <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Subject" required>
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
                             </div>
                             <div class="mb-3">
-                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" required>
                             </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
                             </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="row mt-5">
-                <div class="col-lg-4 text-center mb-4">
-                    <div class="contact-info">
-                        <div class="contact-icon mb-3">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h5>Address</h5>
-                        <p>123 Main Street<br>New York, NY 10001</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 text-center mb-4">
-                    <div class="contact-info">
-                        <div class="contact-icon mb-3">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h5>Phone</h5>
-                        <p>+1 (555) 123-4567</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 text-center mb-4">
-                    <div class="contact-info">
-                        <div class="contact-icon mb-3">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h5>Email</h5>
-                        <p>hello@johndoe.com</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="py-4 text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="social-links mb-3">
-                        <a href="#" class="me-3"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="me-3"><i class="fab fa-github"></i></a>
-                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
-                    </div>
-                    <p class="mb-0">&copy; 2024 John Doe. All rights reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Alert Container -->
+    <div id="alertContainer"></div>
 
+    <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
