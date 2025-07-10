@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Austin Mejias - Cybersecurity Portfolio</title>
+    <title>Austin Mejias - Cybersecurity Professional</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
     
     <!-- Bootstrap CSS -->
@@ -17,99 +17,94 @@
 </head>
 <body>
     <!-- Loading Screen -->
-    <div class="loading" id="loading">
-        <div class="loading-spinner"></div>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="cyber-loader"></div>
+            <p>Initializing Security Protocols...</p>
+        </div>
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand cyber-glow" href="#home">austinMejias</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#home">
+                <span class="brand-text">Austin Mejias</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#certifications">Certifications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero-section">
+        <div class="matrix-bg"></div>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
                     <h1 class="hero-title">Austin Mejias</h1>
-                    <p class="lead">Fullstack Developer & Cybersecurity Professional</p>
-                    <p class="hero-description mb-4">Securing networks for the United States Air Force.</p>
-                    <a href="#contact" class="btn btn-custom btn-lg">Get In Touch</a>
-                    <div class="hero-scroll" onclick="scrollToSection('about')">
-                        <i class="fas fa-chevron-down"></i>
+                    <p class="hero-subtitle">Cybersecurity Professional & Full Stack Developer</p>
+                    <p class="hero-description">Securing networks for the United States Air Force while building the future of web development</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary-custom">Get In Touch</a>
+                        <a href="#about" class="btn btn-outline-custom">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section about">
+    <section id="about" class="section-padding">
         <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-                <p>Military-trained cybersecurity expert transitioning to full-stack development</p>
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 class="section-title">About Me</h2>
+                        <p class="section-subtitle">Military-trained cybersecurity expert transitioning to full-stack development</p>
+                    </div>
+                </div>
             </div>
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="col-lg-6 mb-4">
                     <div class="about-content">
-                        <p>I am a military-trained cybersecurity professional with over 8 years of experience protecting critical networks and managing IT operations in high-security environments. I specialize in vulnerability management, endpoint security, and patch lifecycle coordination, with hands-on experience using tools like ARAD and ACAS to improve compliance and reduce risk.</p>
-                        <p>Currently completing my Bachelor's in Computer Science while expanding my capabilities as a full-stack developer. This unique combination of cybersecurity expertise and development skills allows me to build secure, scalable solutions from the ground up.</p>
-                        <p>When I'm not coding or securing networks, you'll find me exploring emerging technologies, contributing to open-source projects, and mentoring aspiring developers in the cybersecurity community.</p>
-                        <div class="stats-row mt-4">
+                        <p>I am a military-trained cybersecurity professional with over 8 years of experience protecting critical networks and managing IT operations in high-security environments. I specialize in vulnerability management, endpoint security, and patch lifecycle coordination.</p>
+                        <p>Currently completing my Bachelor's in Computer Science while expanding my capabilities as a full-stack developer. This unique combination allows me to build secure, scalable solutions from the ground up.</p>
+                        <div class="stats-grid">
                             <div class="stat-item">
-                                <h3 class="stat-number" data-target="15">0</h3>
-                                <p>Projects Completed</p>
+                                <div class="stat-number" data-target="15">0</div>
+                                <div class="stat-label">Projects</div>
                             </div>
                             <div class="stat-item">
-                                <h3 class="stat-number" data-target="8">0</h3>
-                                <p>Years Experience</p>
+                                <div class="stat-number" data-target="8">0</div>
+                                <div class="stat-label">Years Experience</div>
                             </div>
                             <div class="stat-item">
-                                <h3 class="stat-number" data-target="55564">0</h3>
-                                <p>Vulnerabilities Patched</p>
+                                <div class="stat-number" data-target="55564">0</div>
+                                <div class="stat-label">Vulnerabilities Patched</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="about-image">
-                        <img src="/placeholder.svg?height=400&width=500" alt="Austin Mejias Profile" class="img-fluid rounded shadow">
+                        <img src="/placeholder.svg?height=400&width=400" alt="Austin Mejias" class="img-fluid">
                         <div class="image-overlay">
-                            <div class="overlay-content">
-                                <i class="fas fa-shield-alt"></i>
-                                <p>Cybersecurity Expert</p>
-                            </div>
+                            <i class="fas fa-shield-alt"></i>
                         </div>
                     </div>
                 </div>
@@ -118,60 +113,46 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="section">
+    <section id="education" class="section-padding bg-dark">
         <div class="container">
-            <div class="section-title">
-                <h2>Education</h2>
-                <p>Academic achievements and ongoing educational pursuits</p>
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 class="section-title">Education</h2>
+                        <p class="section-subtitle">Academic achievements and ongoing pursuits</p>
+                    </div>
+                </div>
             </div>
-        
             <div class="row justify-content-center">
-                <!-- Current Degree Progress -->
-                <div class="col-lg-6 col-md-8 mb-4">
-                    <div class="education-item">
+                <div class="col-lg-6 mb-4">
+                    <div class="education-card">
                         <div class="education-icon">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <div class="education-content">
-                            <h4>Bachelor of Science in Computer Science</h4>
-                            <div class="school-name">Western Governors University</div>
-                            <div class="education-status">
-                                <span class="status-badge in-progress">In Progress</span>
+                        <h4>Bachelor of Science in Computer Science</h4>
+                        <p class="school-name">Western Governors University</p>
+                        <div class="status-badge in-progress">In Progress</div>
+                        <div class="progress-section">
+                            <div class="progress-info">
+                                <span>80 of 120 Credits</span>
+                                <span class="percentage">67%</span>
                             </div>
-                            <div class="progress-container">
-                                <div class="progress-info">
-                                    <span>Progress: 80 of 120 Credits</span>
-                                    <span class="percentage">67%</span>
-                                </div>
-                                <div class="education-progress">
-                                    <div class="education-progress-bar" data-width="67"></div>
-                                </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" data-width="67"></div>
                             </div>
-                            <p class="education-description">ABET-accredited program focusing on software development, algorithms, data structures, and computer systems architecture with cybersecurity emphasis.</p>
                         </div>
+                        <p class="education-description">ABET-accredited program focusing on software development, algorithms, and cybersecurity.</p>
                     </div>
                 </div>
-            
-                <!-- Future Degree Placeholder -->
-                <div class="col-lg-6 col-md-8 mb-4">
-                    <div class="education-item future-degree">
+                <div class="col-lg-6 mb-4">
+                    <div class="education-card future">
                         <div class="education-icon">
                             <i class="fas fa-user-graduate"></i>
                         </div>
-                        <div class="education-content">
-                            <h4>Master of Science</h4>
-                            <div class="school-name">Future Graduate Studies</div>
-                            <div class="education-status">
-                                <span class="status-badge planned">Planned</span>
-                            </div>
-                            <div class="progress-container">
-                                <div class="progress-info">
-                                    <span>Specialization: Cybersecurity/Software Engineering</span>
-                                    <span class="percentage">Planning Phase</span>
-                                </div>
-                            </div>
-                            <p class="education-description">Planning to pursue advanced studies in cybersecurity, software engineering, or related field upon completion of bachelor's degree.</p>
-                        </div>
+                        <h4>Master of Science</h4>
+                        <p class="school-name">Future Graduate Studies</p>
+                        <div class="status-badge planned">Planned</div>
+                        <p class="education-description">Planning advanced studies in cybersecurity or software engineering upon bachelor's completion.</p>
                     </div>
                 </div>
             </div>
@@ -179,44 +160,48 @@
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="section">
+    <section id="certifications" class="section-padding">
         <div class="container">
-            <div class="section-title">
-                <h2>Professional Certifications</h2>
-                <p>Industry-recognized certifications validating cybersecurity and IT expertise</p>
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 class="section-title">Professional Certifications</h2>
+                        <p class="section-subtitle">Industry-recognized cybersecurity and IT expertise</p>
+                    </div>
+                </div>
             </div>
-            
-            <div class="row justify-content-center">
-                <!-- Security+ Certification -->
+            <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="certification-item">
-                        <i class="fas fa-shield-alt"></i>
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
                         <h4>CompTIA Security+</h4>
-                        <p>Foundational cybersecurity skills covering network security, compliance, operational security, threats and vulnerabilities, application security, and cryptography.</p>
-                        <span class="certification-badge">Professional</span>
-                        <div class="certification-date">Expires: July 2029</div>
+                        <p>Foundational cybersecurity skills covering network security, compliance, and threat management.</p>
+                        <div class="cert-badge">Professional</div>
+                        <div class="cert-date">Expires: July 2029</div>
                     </div>
                 </div>
-                
-                <!-- ITIL v4 Certification -->
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="certification-item">
-                        <i class="fas fa-cogs"></i>
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
                         <h4>ITIL v4 Foundation</h4>
-                        <p>IT service management best practices covering service strategy, design, transition, operation, and continual service improvement frameworks.</p>
-                        <span class="certification-badge">Foundation</span>
-                        <div class="certification-date">Expires: April 2027</div>
+                        <p>IT service management best practices and frameworks for service improvement.</p>
+                        <div class="cert-badge">Foundation</div>
+                        <div class="cert-date">Expires: April 2027</div>
                     </div>
                 </div>
-                
-                <!-- Coming Soon Placeholder -->
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="certification-item coming-soon">
-                        <i class="fas fa-plus-circle"></i>
+                    <div class="cert-card coming-soon">
+                        <div class="cert-icon">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
                         <h4>Advanced Certifications</h4>
-                        <p>Currently pursuing additional certifications in cloud security, DevOps, and full-stack development to expand expertise in emerging technologies.</p>
-                        <span class="certification-badge">Coming Soon</span>
-                        <div class="certification-date">In Progress</div>
+                        <p>Currently pursuing additional certifications in cloud security and DevOps.</p>
+                        <div class="cert-badge">Coming Soon</div>
+                        <div class="cert-date">In Progress</div>
                     </div>
                 </div>
             </div>
@@ -224,84 +209,79 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section projects">
+    <section id="projects" class="section-padding bg-dark">
         <div class="container">
-            <div class="section-title">
-                <h2>Featured Projects</h2>
-                <p>Cybersecurity tools and full-stack applications showcasing technical expertise</p>
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 class="section-title">Featured Projects</h2>
+                        <p class="section-subtitle">Cybersecurity tools and full-stack applications</p>
+                    </div>
+                </div>
             </div>
-            <div class="projects-filter text-center mb-5">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Web Apps</button>
-                <button class="filter-btn" data-filter="mobile">Mobile</button>
-                <button class="filter-btn" data-filter="security">Security</button>
-            </div>
-            <div class="row projects-grid">
-                <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="web">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="/placeholder.svg?height=200&width=400" alt="E-commerce Platform">
+                            <img src="/placeholder.svg?height=200&width=350" alt="E-commerce Platform">
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="#" class="project-link" title="View Live"><i class="fas fa-external-link-alt"></i></a>
-                                    <a href="#" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                    <a href="#" class="project-link"><i class="fab fa-github"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body">
+                        <div class="project-content">
                             <h5>Secure E-commerce Platform</h5>
-                            <p>Full-stack e-commerce solution with advanced security features, payment integration, inventory management, and real-time analytics dashboard.</p>
+                            <p>Full-stack solution with advanced security features and payment integration.</p>
                             <div class="project-tags">
-                                <span class="badge">React</span>
-                                <span class="badge">Node.js</span>
-                                <span class="badge">PostgreSQL</span>
-                                <span class="badge">Security</span>
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Security</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="security">
+                <div class="col-lg-4 col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="/placeholder.svg?height=200&width=400" alt="Vulnerability Scanner">
+                            <img src="/placeholder.svg?height=200&width=350" alt="Vulnerability Scanner">
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="#" class="project-link" title="View Live"><i class="fas fa-external-link-alt"></i></a>
-                                    <a href="#" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                    <a href="#" class="project-link"><i class="fab fa-github"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body">
+                        <div class="project-content">
                             <h5>Network Vulnerability Scanner</h5>
-                            <p>Automated vulnerability assessment tool with comprehensive reporting capabilities and seamless integration with ACAS systems for enterprise security.</p>
+                            <p>Automated assessment tool with comprehensive reporting capabilities.</p>
                             <div class="project-tags">
-                                <span class="badge">Python</span>
-                                <span class="badge">Nmap</span>
-                                <span class="badge">ACAS</span>
-                                <span class="badge">Security</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Nmap</span>
+                                <span class="tag">ACAS</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4 project-item" data-category="web">
+                <div class="col-lg-4 col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="/placeholder.svg?height=200&width=400" alt="Cyber Dashboard">
+                            <img src="/placeholder.svg?height=200&width=350" alt="Security Dashboard">
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="#" class="project-link" title="View Live"><i class="fas fa-external-link-alt"></i></a>
-                                    <a href="#" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                    <a href="#" class="project-link"><i class="fab fa-github"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body">
+                        <div class="project-content">
                             <h5>Cybersecurity Dashboard</h5>
-                            <p>Real-time security monitoring dashboard with threat visualization, incident tracking, and automated alert systems for network administrators.</p>
+                            <p>Real-time monitoring with threat visualization and automated alerts.</p>
                             <div class="project-tags">
-                                <span class="badge">Vue.js</span>
-                                <span class="badge">Express</span>
-                                <span class="badge">MongoDB</span>
-                                <span class="badge">WebSocket</span>
+                                <span class="tag">Vue.js</span>
+                                <span class="tag">Express</span>
+                                <span class="tag">MongoDB</span>
                             </div>
                         </div>
                     </div>
@@ -311,40 +291,43 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="section">
+    <section id="experience" class="section-padding">
         <div class="container">
-            <div class="section-title">
-                <h2>Professional Experience</h2>
-                <p>Military cybersecurity leadership and full-stack development journey</p>
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 class="section-title">Professional Experience</h2>
+                        <p class="section-subtitle">Military cybersecurity leadership and development journey</p>
+                    </div>
+                </div>
             </div>
             <div class="row">
                 <div class="col-lg-10 mx-auto">
                     <div class="timeline">
-                        <div class="experience-item">
-                            <div class="experience-date">2016 - Present</div>
-                            <div class="experience-content">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2016 - Present</div>
+                            <div class="timeline-content">
                                 <h4>Cybersecurity Specialist</h4>
-                                <div class="company">United States Air Force</div>
-                                <p>Lead cybersecurity operations for critical military networks, managing vulnerability assessments, patch management, and security compliance across classified systems with zero-tolerance security standards.</p>
+                                <h5>United States Air Force</h5>
+                                <p>Lead cybersecurity operations for critical military networks, managing vulnerability assessments and security compliance.</p>
                                 <ul>
                                     <li>Managed over 55,000 vulnerability patches across enterprise networks</li>
                                     <li>Led team of security analysts in threat detection and incident response</li>
                                     <li>Implemented ACAS and ARAD systems for automated security monitoring</li>
-                                    <li>Achieved 98% compliance rate for DoD security standards and protocols</li>
-                                    <li>Conducted security training and mentored junior cybersecurity personnel</li>
+                                    <li>Achieved 98% compliance rate for DoD security standards</li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="experience-item">
-                            <div class="experience-date">2020 - Present</div>
-                            <div class="experience-content">
-                                <h4>Full Stack Developer (Student)</h4>
-                                <div class="company">Self-Directed Learning & Projects</div>
-                                <p>Pursuing Bachelor's in Computer Science while developing secure full-stack applications and expanding technical skills in modern web development frameworks with cybersecurity focus.</p>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2020 - Present</div>
+                            <div class="timeline-content">
+                                <h4>Full Stack Developer</h4>
+                                <h5>Self-Directed Learning & Projects</h5>
+                                <p>Pursuing Computer Science degree while developing secure applications and expanding technical skills.</p>
                                 <ul>
-                                    <li>Built multiple secure web applications using React, Vue.js, and Node.js</li>
+                                    <li>Built secure web applications using React, Vue.js, and Node.js</li>
                                     <li>Developed authentication systems with advanced security implementations</li>
-                                    <li>Contributed to open-source cybersecurity and development projects</li>
+                                    <li>Contributed to open-source cybersecurity projects</li>
                                     <li>Integrated security best practices into all development projects</li>
                                 </ul>
                             </div>
@@ -356,32 +339,36 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section contact">
+    <section id="contact" class="section-padding bg-dark">
         <div class="container">
-            <div class="section-title">
-                <h2 style="color: var(--accent-color);">Get In Touch</h2>
-                <p style="color: var(--text-light);">Let's discuss cybersecurity projects or development opportunities</p>
-            </div>
             <div class="row">
-                <div class="col-lg-8 mx-auto">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 class="section-title">Get In Touch</h2>
+                        <p class="section-subtitle">Let's discuss cybersecurity projects or development opportunities</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
                     <div class="contact-form">
                         <form id="contactForm">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                                    <input type="text" class="form-control" name="name" placeholder="Your Name" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                                    <input type="email" class="form-control" name="email" placeholder="Your Email" required>
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
                             </div>
                             <div class="mb-3">
-                                <textarea class="form-control" id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                                <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-custom btn-lg">Send Message</button>
+                                <button type="submit" class="btn btn-primary-custom">Send Message</button>
                             </div>
                         </form>
                     </div>
@@ -396,8 +383,12 @@
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/austin-mejias-12190b126/" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/W1zard12" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/austin-mejias-12190b126/" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/W1zard12" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -411,15 +402,15 @@
                 <div class="col-md-6">
                     <p>&copy; 2024 Austin Mejias. All rights reserved.</p>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <p>Built with <i class="fas fa-heart" style="color: var(--accent-secondary);"></i> and cutting-edge security</p>
+                <div class="col-md-6 text-end">
+                    <p>Built with security and innovation in mind</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top" title="Back to Top">
+    <!-- Back to Top -->
+    <button id="backToTop" class="back-to-top">
         <i class="fas fa-chevron-up"></i>
     </button>
 
