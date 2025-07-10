@@ -3,296 +3,653 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Doe - Portfolio</title>
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <title>John Doe - Personal Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 1.5rem;
+            z-index: 1000;
+            transform: translateX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar.hidden {
+            transform: translateX(-100%);
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .profile h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile p {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            background: rgba(255, 255, 255, 0.2);
+            opacity: 1;
+            transform: translateX(5px);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1001;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 280px;
+            min-height: 100vh;
+            transition: margin-left 0.3s ease;
+        }
+
+        .main-content.expanded {
+            margin-left: 0;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--bg-secondary);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .skill-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .education-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .education-card .institution {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .year {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Certifications Section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-item {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--cert-color, var(--primary-color));
+        }
+
+        .cert-item:nth-child(1) { --cert-color: #ef4444; }
+        .cert-item:nth-child(2) { --cert-color: #10b981; }
+        .cert-item:nth-child(3) { --cert-color: #f59e0b; }
+        .cert-item:nth-child(4) { --cert-color: #8b5cf6; }
+
+        .cert-item h3 {
+            color: var(--cert-color, var(--primary-color));
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .project-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-item::before {
+            content: '📧';
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-item:nth-child(2)::before { content: '📱'; }
+        .contact-item:nth-child(3)::before { content: '📍'; }
+        .contact-item:nth-child(4)::before { content: '💼'; }
+
+        .contact-form {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .education-grid,
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
 </head>
 <body>
-    <!-- Mobile Toggle Button -->
-    <button class="mobile-toggle" id="mobileToggle">
-        <i class="fas fa-bars"></i>
-    </button>
+    <!-- Mobile Menu Toggle -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
 
     <!-- Sidebar -->
     <nav class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <img src="/placeholder.svg?height=80&width=80" alt="Profile" class="profile-img">
-            <h4>John Doe</h4>
-            <p class="text-muted">Full Stack Developer</p>
+        <div class="profile">
+            <div class="profile-img">JD</div>
+            <h1>John Doe</h1>
+            <p>Full Stack Developer</p>
         </div>
-        
-        <ul class="sidebar-nav list-unstyled">
-            <li class="nav-item">
-                <a href="#about" class="nav-link active">
-                    <i class="fas fa-user"></i>
-                    About Me
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#education" class="nav-link">
-                    <i class="fas fa-graduation-cap"></i>
-                    Education
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#certifications" class="nav-link">
-                    <i class="fas fa-certificate"></i>
-                    Certifications
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#projects" class="nav-link">
-                    <i class="fas fa-code"></i>
-                    Projects
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#contact" class="nav-link">
-                    <i class="fas fa-envelope"></i>
-                    Get in Touch
-                </a>
-            </li>
+        <ul class="nav-menu">
+            <li><a href="#about" class="nav-link active">About Me</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#certifications" class="nav-link">Certifications</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Get in Touch</a></li>
         </ul>
     </nav>
 
     <!-- Main Content -->
     <main class="main-content" id="mainContent">
         <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <h3 class="mb-4">Hello, I'm John Doe</h3>
-                        <p class="lead mb-4">
-                            A passionate Full Stack Developer with 5+ years of experience creating 
-                            innovative web applications and solutions. I specialize in modern 
-                            JavaScript frameworks and cloud technologies.
-                        </p>
-                        <p class="mb-4">
-                            I love turning complex problems into simple, beautiful designs. When I'm 
-                            not coding, you'll find me exploring new technologies, contributing to 
-                            open source projects, or sharing knowledge with the developer community.
-                        </p>
-                        <div class="mb-4">
-                            <h5>Core Skills:</h5>
-                            <div class="skills-container">
-                                <span class="skill-badge">JavaScript</span>
-                                <span class="skill-badge">React</span>
-                                <span class="skill-badge">Node.js</span>
-                                <span class="skill-badge">Python</span>
-                                <span class="skill-badge">AWS</span>
-                                <span class="skill-badge">Docker</span>
-                                <span class="skill-badge">MongoDB</span>
-                                <span class="skill-badge">PostgreSQL</span>
-                                <span class="skill-badge">Git</span>
-                                <span class="skill-badge">CI/CD</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 text-center">
-                        <img src="/placeholder.svg?height=400&width=400" alt="About Me" class="img-fluid rounded">
+        <section id="about" class="fade-in">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm John Doe, a passionate full-stack developer with over 5 years of experience creating digital solutions that make a difference. I specialize in modern web technologies and love turning complex problems into simple, beautiful designs.</p>
+                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community through blogs and workshops.</p>
+                </div>
+                <div class="skills-section">
+                    <h3>Technical Skills</h3>
+                    <div class="skills">
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">React</span>
+                        <span class="skill-badge">Node.js</span>
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">MongoDB</span>
+                        <span class="skill-badge">PostgreSQL</span>
+                        <span class="skill-badge">AWS</span>
+                        <span class="skill-badge">Docker</span>
+                        <span class="skill-badge">Git</span>
+                        <span class="skill-badge">TypeScript</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="section">
-            <div class="container">
-                <h2 class="section-title">Education</h2>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="card education-card">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-university text-primary me-2"></i>
-                                    Master of Computer Science
-                                </h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Stanford University</h6>
-                                <p class="text-muted">2018 - 2020</p>
-                                <p class="card-text">
-                                    Specialized in Software Engineering and Machine Learning. 
-                                    Graduated with honors (GPA: 3.8/4.0).
-                                </p>
-                                <ul class="list-unstyled">
-                                    <li><i class="fas fa-check text-success me-2"></i>Advanced Algorithms</li>
-                                    <li><i class="fas fa-check text-success me-2"></i>Distributed Systems</li>
-                                    <li><i class="fas fa-check text-success me-2"></i>Machine Learning</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card education-card">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-graduation-cap text-primary me-2"></i>
-                                    Bachelor of Computer Engineering
-                                </h5>
-                                <h6 class="card-subtitle mb-2 text-muted">UC Berkeley</h6>
-                                <p class="text-muted">2014 - 2018</p>
-                                <p class="card-text">
-                                    Strong foundation in computer science fundamentals and 
-                                    software development practices.
-                                </p>
-                                <ul class="list-unstyled">
-                                    <li><i class="fas fa-check text-success me-2"></i>Data Structures & Algorithms</li>
-                                    <li><i class="fas fa-check text-success me-2"></i>Software Engineering</li>
-                                    <li><i class="fas fa-check text-success me-2"></i>Database Systems</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+        <section id="education" class="fade-in">
+            <h2>Education</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>Master of Computer Science</h3>
+                    <div class="institution">Stanford University</div>
+                    <div class="year">2018 - 2020</div>
+                    <p>Specialized in Machine Learning and Distributed Systems. Graduated Magna Cum Laude with a GPA of 3.8/4.0.</p>
+                </div>
+                <div class="education-card">
+                    <h3>Bachelor of Software Engineering</h3>
+                    <div class="institution">University of California, Berkeley</div>
+                    <div class="year">2014 - 2018</div>
+                    <p>Focused on software architecture and web development. Active member of the Computer Science Society and hackathon organizer.</p>
+                </div>
+                <div class="education-card">
+                    <h3>Full Stack Web Development Bootcamp</h3>
+                    <div class="institution">General Assembly</div>
+                    <div class="year">2017</div>
+                    <p>Intensive 12-week program covering modern web development technologies including React, Node.js, and database management.</p>
                 </div>
             </div>
         </section>
 
         <!-- Certifications Section -->
-        <section id="certifications" class="section">
-            <div class="container">
-                <h2 class="section-title">Certifications</h2>
-                <div class="row">
-                    <div class="col-lg-4 mb-4">
-                        <div class="card cert-card aws">
-                            <div class="card-header">
-                                <i class="fab fa-aws me-2"></i>
-                                AWS Solutions Architect
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">
-                                    Professional level certification demonstrating expertise in 
-                                    designing distributed systems on AWS.
-                                </p>
-                                <small class="text-muted">Issued: March 2023</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-4">
-                        <div class="card cert-card google">
-                            <div class="card-header">
-                                <i class="fab fa-google me-2"></i>
-                                Google Cloud Professional
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">
-                                    Certified in designing, building, and managing solutions 
-                                    using Google Cloud technologies.
-                                </p>
-                                <small class="text-muted">Issued: January 2023</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-4">
-                        <div class="card cert-card microsoft">
-                            <div class="card-header">
-                                <i class="fab fa-microsoft me-2"></i>
-                                Azure Developer Associate
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">
-                                    Expertise in developing and maintaining cloud applications 
-                                    and services on Microsoft Azure.
-                                </p>
-                                <small class="text-muted">Issued: November 2022</small>
-                            </div>
-                        </div>
-                    </div>
+        <section id="certifications" class="fade-in">
+            <h2>Certifications</h2>
+            <div class="certifications-grid">
+                <div class="cert-item">
+                    <h3>AWS Certified Solutions Architect</h3>
+                    <p>Amazon Web Services</p>
+                    <small>Issued: March 2023 • Expires: March 2026</small>
+                </div>
+                <div class="cert-item">
+                    <h3>Google Cloud Professional Developer</h3>
+                    <p>Google Cloud Platform</p>
+                    <small>Issued: January 2023 • Expires: January 2025</small>
+                </div>
+                <div class="cert-item">
+                    <h3>MongoDB Certified Developer</h3>
+                    <p>MongoDB University</p>
+                    <small>Issued: September 2022 • No Expiration</small>
+                </div>
+                <div class="cert-item">
+                    <h3>Certified Kubernetes Administrator</h3>
+                    <p>Cloud Native Computing Foundation</p>
+                    <small>Issued: June 2022 • Expires: June 2025</small>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="section">
-            <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <div class="row">
-                    <div class="col-lg-4 mb-4">
-                        <div class="card project-card">
-                            <img src="/placeholder.svg?height=200&width=400" alt="E-commerce Platform" class="project-img">
-                            <div class="card-body">
-                                <h5 class="card-title">E-commerce Platform</h5>
-                                <p class="card-text">
-                                    Full-stack e-commerce solution with real-time inventory 
-                                    management and payment processing.
-                                </p>
-                                <div class="tech-stack">
-                                    <span class="tech-badge">React</span>
-                                    <span class="tech-badge">Node.js</span>
-                                    <span class="tech-badge">MongoDB</span>
-                                    <span class="tech-badge">Stripe</span>
-                                </div>
-                                <div class="mt-3">
-                                    <a href="#" class="btn btn-primary btn-sm me-2">
-                                        <i class="fas fa-external-link-alt me-1"></i>Live Demo
-                                    </a>
-                                    <a href="#" class="btn btn-outline-secondary btn-sm">
-                                        <i class="fab fa-github me-1"></i>Code
-                                    </a>
-                                </div>
-                            </div>
+        <section id="projects" class="fade-in">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">🚀</div>
+                    <div class="project-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>A full-featured e-commerce platform with real-time inventory management, payment processing, and admin dashboard. Built for scalability and performance.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Stripe API</span>
+                            <span class="tech-tag">AWS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="#" class="project-link">GitHub</a>
                         </div>
                     </div>
-                    <div class="col-lg-4 mb-4">
-                        <div class="card project-card">
-                            <img src="/placeholder.svg?height=200&width=400" alt="Task Management App" class="project-img">
-                            <div class="card-body">
-                                <h5 class="card-title">Task Management App</h5>
-                                <p class="card-text">
-                                    Collaborative project management tool with real-time 
-                                    updates and team collaboration features.
-                                </p>
-                                <div class="tech-stack">
-                                    <span class="tech-badge">Vue.js</span>
-                                    <span class="tech-badge">Express</span>
-                                    <span class="tech-badge">Socket.io</span>
-                                    <span class="tech-badge">PostgreSQL</span>
-                                </div>
-                                <div class="mt-3">
-                                    <a href="#" class="btn btn-primary btn-sm me-2">
-                                        <i class="fas fa-external-link-alt me-1"></i>Live Demo
-                                    </a>
-                                    <a href="#" class="btn btn-outline-secondary btn-sm">
-                                        <i class="fab fa-github me-1"></i>Code
-                                    </a>
-                                </div>
-                            </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">📱</div>
+                    <div class="project-content">
+                        <h3>Task Management App</h3>
+                        <p>A collaborative task management application with real-time updates, team collaboration features, and advanced analytics dashboard.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Socket.io</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="#" class="project-link">GitHub</a>
                         </div>
                     </div>
-                    <div class="col-lg-4 mb-4">
-                        <div class="card project-card">
-                            <img src="/placeholder.svg?height=200&width=400" alt="Weather Dashboard" class="project-img">
-                            <div class="card-body">
-                                <h5 class="card-title">Weather Dashboard</h5>
-                                <p class="card-text">
-                                    Interactive weather application with location-based 
-                                    forecasts and historical data visualization.
-                                </p>
-                                <div class="tech-stack">
-                                    <span class="tech-badge">React</span>
-                                    <span class="tech-badge">D3.js</span>
-                                    <span class="tech-badge">Weather API</span>
-                                    <span class="tech-badge">Chart.js</span>
-                                </div>
-                                <div class="mt-3">
-                                    <a href="#" class="btn btn-primary btn-sm me-2">
-                                        <i class="fas fa-external-link-alt me-1"></i>Live Demo
-                                    </a>
-                                    <a href="#" class="btn btn-outline-secondary btn-sm">
-                                        <i class="fab fa-github me-1"></i>Code
-                                    </a>
-                                </div>
-                            </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">🤖</div>
+                    <div class="project-content">
+                        <h3>AI Content Generator</h3>
+                        <p>An AI-powered content generation tool that helps marketers create engaging copy, social media posts, and blog articles using natural language processing.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">OpenAI API</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="#" class="project-link">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -300,79 +657,154 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 class="section-title">Get in Touch</h2>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h4 class="mb-4">Let's Connect</h4>
-                        <p class="mb-4">
-                            I'm always interested in new opportunities and exciting projects. 
-                            Whether you have a question or just want to say hi, feel free to reach out!
-                        </p>
-                        
-                        <div class="contact-info">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-envelope text-primary me-3"></i>
-                                <span>john.doe@email.com</span>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-phone text-primary me-3"></i>
-                                <span>+1 (555) 123-4567</span>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-map-marker-alt text-primary me-3"></i>
-                                <span>San Francisco, CA</span>
-                            </div>
-                        </div>
-
-                        <div class="social-links mt-4">
-                            <a href="#" class="btn btn-outline-primary me-2">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="#" class="btn btn-outline-primary me-2">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="btn btn-outline-primary me-2">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <form id="contactForm" class="contact-form">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="subject" class="form-label">Subject</label>
-                                <input type="text" class="form-control" id="subject" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-paper-plane me-2"></i>Send Message
-                            </button>
-                        </form>
-                    </div>
+        <section id="contact" class="fade-in">
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always interested in hearing about new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!</p>
+                    <div class="contact-item">john.doe@email.com</div>
+                    <div class="contact-item">+1 (555) 123-4567</div>
+                    <div class="contact-item">San Francisco, CA</div>
+                    <div class="contact-item">linkedin.com/in/johndoe</div>
                 </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
             </div>
         </section>
     </main>
 
-    <!-- Alert Container -->
-    <div id="alertContainer"></div>
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('mainContent');
 
-    <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JavaScript -->
-    <script src="script.js"></script>
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+                    sidebar.classList.remove('active');
+                }
+            }
+        });
+
+        // Smooth scrolling and active nav link
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                // Remove active class from all links
+                navLinks.forEach(l => l.classList.remove('active'));
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                // Smooth scroll to section
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+
+                // Close mobile menu after clicking
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('active');
+                }
+            });
+        });
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Contact form handling
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Simulate form submission
+            alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animations
+        sections.forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                sidebar.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
